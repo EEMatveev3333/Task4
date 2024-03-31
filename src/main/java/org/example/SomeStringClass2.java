@@ -4,7 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Component;
 
-@Component
+@Component("SomeStringClass2")
 public class SomeStringClass2 {
     @Autowired String F1;
 

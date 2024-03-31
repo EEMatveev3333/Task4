@@ -31,9 +31,10 @@ public class Main {
         Date Date_ = new java.util.Date();
 
         //new AnnotationConfigApplicationContext("org.example")
-                //.getBean("SomeDateClassBean1",SomeDateClass.class)
+        //Date_ =
+        SomeStringClass2 someStringClass2  = context.getBean("SomeStringClass2",SomeStringClass2.class);
                 //.make();
-        System.out.println("Date_ - " + Date_);
+        System.out.println("someStringClass2 - " + someStringClass2.make2());
 
         // 3 task
         Integer Integer_;//_ = new java.util.Date();
