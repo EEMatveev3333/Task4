@@ -1,5 +1,6 @@
 package org.example;
 
+import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 import java.util.Date;
@@ -12,8 +13,11 @@ public class Main {
         // IntelliJ IDEA suggests fixing it.
         System.out.println("Start!");
 
+        ApplicationContext context =
+                new AnnotationConfigApplicationContext("org.example");
+
         // 1 task
-        String Str = new AnnotationConfigApplicationContext("org.example")
+        String Str = context
                 .getBean("StringBean",SomeStringClass.class)
                 .make();
         System.out.println("Str - " + Str);
@@ -29,9 +33,9 @@ public class Main {
         // 3 task
         Integer Integer_;//_ = new java.util.Date();
 
-        Integer_ = new AnnotationConfigApplicationContext("org.example")
-        .getBean("SomePredicateInteger1",SomePredicateInteger.class)
-        .make();
+        Integer_ = 0;//new AnnotationConfigApplicationContext("org.example")
+        //.getBean("SomePredicateInteger1",SomePredicateInteger.class)
+        //.make();
         System.out.println("Integer_ - " + Integer_);
 
         System.out.println("Finish!");

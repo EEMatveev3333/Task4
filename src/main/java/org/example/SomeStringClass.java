@@ -6,7 +6,7 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class SomeStringClass {
-    @Autowired String F1;
+    @Autowired String F1 = "Hellow world";
 
     public SomeStringClass(String f1) {
         F1 = "Hellow world";
