@@ -2,6 +2,7 @@ package org.example;
 
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+//import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 import java.util.Date;
 
@@ -22,6 +23,10 @@ public class Main {
                 .make();
         System.out.println("Str - " + Str);
 
+        String Str2 = context
+                .getBean("StringBean2",SomeStringClass2.class)
+                .make2();
+        System.out.println("Str2 - " + Str2);
         // 2 task
         Date Date_ = new java.util.Date();
 
