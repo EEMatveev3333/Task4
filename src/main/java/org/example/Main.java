@@ -5,6 +5,7 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 //import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.PropertySource;
 //import org.springframework.transaction.annotation.EnableTransactionManagement;
 //import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
@@ -16,6 +17,7 @@ import java.util.Date;
 //@EnableAutoConfiguration
 @Configuration
 //@EnableTransactionManagement
+@PropertySource({"classpath:application.properties"})
 public class Main {
 
     public static void main(String[] args) throws java.lang.InterruptedException {
