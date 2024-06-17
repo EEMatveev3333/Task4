@@ -1,18 +1,19 @@
-package org.example;
+package org.example.ordered;
 
 //import org.example.Interface.DataValidationComponent;
 //import org.example.LogTransformation.LogTransformation;
 import org.example.baseClasses.LineFile;
+import org.example.baseInterfaces.DataValidationComponent;
 import org.springframework.core.Ordered;
 import org.springframework.stereotype.Component;
 
 //@LogTransformation(LogFile = "ValidatorFIO.log")
 @Component
-public class FioValidator //implements Ordered, DataValidationComponent <LineFile>
+public class FioValidator implements Ordered, DataValidationComponent<LineFile>
  {
-    //@Override
+    @Override
     public int getOrder () {
-        return 30;  //порядок выполнения
+        return 3;
     }
 
     //@Override

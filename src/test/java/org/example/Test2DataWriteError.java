@@ -1,36 +1,37 @@
 package org.example;
 
-//import org.example.LineFile;
-//import org.example.data.DatabaseWorks;
-//import org.example.data.inter.LogErrorRepository;
 import org.example.baseClasses.LineFile;
-import org.example.databaseFunctional.DatabaseWorks;
-import org.example.databaseFunctional.LogErrorRepository;
+import org.example.baseClasses.DatabaseWorks;
+import org.example.repository.LogErrorRepository;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;
-import org.mockito.Mock;
 import org.mockito.Mockito;
+import org.mockito.Spy;
 import org.mockito.junit.MockitoJUnitRunner;
+import org.springframework.test.context.junit4.SpringRunner;
 
 import java.util.ArrayList;
 import java.util.List;
 
-@RunWith(MockitoJUnitRunner.class)
+//@RunWith(MockitoJUnitRunner.class)
+@RunWith(SpringRunner.class)
 public class Test2DataWriteError {
 
-    @Mock
+    @Spy
     private LogErrorRepository logErrorRepository;
     @InjectMocks
     private DatabaseWorks databaseWorks;
 
     @Test
-    public void testWriteRrrorToDataBase ()
+    public void testWriteErrorToDataBase ()
     {
-        LineFile errorline1 = Mockito.mock(LineFile.class);
+        LineFile errorline1 = Mockito.spy(LineFile.class);
+        errorline1.setTextError("Error1");
         Mockito.when(errorline1.getTextError()).thenReturn("Error1");
 
-        LineFile errorline2 = Mockito.mock(LineFile.class);
+        LineFile errorline2 = Mockito.spy(LineFile.class);
+        errorline2.setTextError("Error2");
         Mockito.when(errorline2.getTextError()).thenReturn("Error2");
 
         List <LineFile>  errorLines = new ArrayList<>();

@@ -1,8 +1,16 @@
-package org.example.hybernateEntites;
+package org.example.model;
+import lombok.*;
+
 import javax.persistence.*;
 @Entity
 @Table(name = "users")
-
+@Data
+@Getter
+@Setter
+@EqualsAndHashCode
+@AllArgsConstructor
+@NoArgsConstructor
+@ToString
 //@NamedQuery( name ="findbyNameUser",
 //        query ="select u  from Users u  where u.nameuser=:nameuser"
 //)

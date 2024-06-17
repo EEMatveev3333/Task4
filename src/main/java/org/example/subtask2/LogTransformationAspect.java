@@ -20,13 +20,22 @@ public class LogTransformationAspect {
     // execution(* *(..)) --любого метода с любыми аргументами  кроме метода getOrder
     public Object logTransformation(ProceedingJoinPoint joinPoint, LogTransformation logTransformation  ) throws Throwable
     {
+        System.out.println("LogTransformationAspect");
         if (logTransformation==null)
             return null;
 
         String  methodname =joinPoint.getSignature().getName();
+        System.out.println("methodname: " + methodname);
+
         String logFile = logTransformation.LogFile(); // Получаем имя лог-файла из аннотации
+        System.out.println("logFile: " + logFile);
+
         String className = joinPoint.getTarget().getClass().getSimpleName();
+        System.out.println("className: " + className);
+
         String filepath =LogDirectory +logFile;
+        System.out.println("filepath: " + filepath);
+
         Object[] args = joinPoint.getArgs();
         Object result= joinPoint.proceed();
         // Логируем данные в файл

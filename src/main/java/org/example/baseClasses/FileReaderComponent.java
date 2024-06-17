@@ -1,7 +1,10 @@
 package org.example.baseClasses;
 
 //import org.example.Interface.TextFileReader;
+import org.example.subtask2.LogTransformation;
 import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
+
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
@@ -9,6 +12,8 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 @Component
+@Service
+@LogTransformation(LogFile = "FileReaderComponent.log")
 public class FileReaderComponent <T> //implements TextFileReader<T>
  {
     //@Override

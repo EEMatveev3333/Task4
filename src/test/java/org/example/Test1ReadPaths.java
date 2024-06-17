@@ -1,6 +1,10 @@
 package org.example;
 
 import org.example.baseClasses.*;
+import org.example.ordered.AppTypeValidator;
+import org.example.baseClasses.DataValidatorComponent;
+import org.example.ordered.DateValidator;
+import org.example.ordered.FioValidator;
 import org.junit.Test;
 import org.junit.jupiter.api.DisplayName;
 import org.mockito.Mockito;
@@ -31,18 +35,22 @@ public void testFileReader ()
     when (scannerReader.filereader()).thenCallRealMethod(); // вызываем реальный метод
     List<String> actualpaths =scannerReader.filereader();
     assertEquals(expectedpath,actualpaths);
+    System.out.println("-");
+    System.out.println(expectedpath);
+    System.out.println(actualpaths);
 }
 
-    @Test
+//1) Компонента чтения данных получает адрес папки файловой системы, сканирует имеющиеся там файлы и возвращает прочитанные строки
+@Test
     @DisplayName("Тестируем работу FileReaderComponent")
-    public void testFileReade ()
+    public void testFileDataReader ()
     {
         FileReaderComponent fileReaderComponent =new FileReaderComponent();
         String path1 =getClass().getResource("/Path1").getPath();
         String path2 =getClass().getResource("/Path2").getPath();
         List<String>paths=List.of(path1,path2 );
         List<LineFile>  lines =fileReaderComponent.readTextFiles(paths);
-        assertEquals(6,lines.size()); // 6 строки в двух файлах
+        assertEquals(12,lines.size()); // 6 строки в двух файлах
         System.out.println("lines="+lines.toString());
     }
     @Test
@@ -110,8 +118,5 @@ public void testFileReader ()
         assertEquals(null,line.getAccess_stamp());
         assertNotNull(line.getTextError());
     }
-
-
-
 }
 

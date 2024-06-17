@@ -1,12 +1,13 @@
 package org.example.baseClasses;
 
 
+import org.example.subtask2.LogTransformation;
 import org.springframework.stereotype.Component;
 
 import java.sql.Timestamp;
 import java.util.Date;
 
-
+@LogTransformation(LogFile = "ValidRecord.log")
 public class ValidRecord {
     private String login;
     private String fio;

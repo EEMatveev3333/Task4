@@ -1,7 +1,7 @@
-package org.example.databaseFunctional;
+package org.example.repository;
 
 //import org.example.data.entity.Logins;
-import org.example.hybernateEntites.Logins;
+import org.example.model.Logins;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 @Repository

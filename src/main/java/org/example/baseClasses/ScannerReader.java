@@ -4,12 +4,14 @@ package org.example.baseClasses;
 
 //1) Компонента чтения данных получает адрес папки файловой системы, сканирует имеющиеся там файлы и возвращает прочитанные строки
 
+import org.example.subtask2.LogTransformation;
 import org.springframework.stereotype.Component;
 import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 @Component
+@LogTransformation(LogFile = "ScannerReader.log")
 public class ScannerReader //implements PathReader<String> {
 {
     //@Override

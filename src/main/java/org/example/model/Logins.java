@@ -1,10 +1,19 @@
-package org.example.hybernateEntites;
+package org.example.model;
+
+import lombok.*;
 
 import javax.persistence.*;
 import java.sql.Timestamp;
 
 @Entity
 @Table(name = "logins")
+@Data
+@Getter
+@Setter
+@EqualsAndHashCode
+@AllArgsConstructor
+@NoArgsConstructor
+@ToString
 public class Logins {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

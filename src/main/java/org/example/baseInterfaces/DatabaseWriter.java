@@ -1,4 +1,4 @@
-package org.example.databaseFunctional;
+package org.example.baseInterfaces;
 
 import java.util.List;
 

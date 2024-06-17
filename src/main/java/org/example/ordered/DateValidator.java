@@ -1,7 +1,8 @@
-package org.example.baseClasses;
+package org.example.ordered;
 
 //import org.example.Interface.DataValidationComponent;
 //import org.example.LogTransformation.LogTransformation;
+import org.example.baseClasses.LineFile;
 import org.example.baseInterfaces.DataValidationComponent;
 import org.example.subtask2.LogTransformation;
 import org.springframework.core.Ordered;
@@ -15,7 +16,7 @@ import java.time.format.DateTimeFormatter;
 public class DateValidator implements Ordered, DataValidationComponent<LineFile> {
     @Override
     public int getOrder() {
-        return 10;  //порядок выполнения
+        return 1;
     }
     @Override
     public boolean validate(LineFile line) {

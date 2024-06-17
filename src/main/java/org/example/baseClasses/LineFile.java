@@ -1,7 +1,18 @@
 package org.example.baseClasses;
 
+import lombok.EqualsAndHashCode;
+import lombok.Getter;
+import lombok.Setter;
+import lombok.ToString;
+import org.example.subtask2.LogTransformation;
+
 import java.sql.Timestamp;
 
+@LogTransformation(LogFile = "LineFile.log")
+@Getter
+@Setter
+@ToString
+@EqualsAndHashCode
 public class LineFile {
 
     private String login;
@@ -23,6 +34,9 @@ public class LineFile {
         this.namefile = nameFile;
         this.line=line;
         this.texterror=texterror;
+    }
+
+    public LineFile() {
     }
 
     public void setTextError(String textError) {
